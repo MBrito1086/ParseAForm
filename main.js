@@ -11,3 +11,24 @@ app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
+
+app.get('/', (req, resp) => {
+  resp.render('home')
+})
+
+app.post('/signup', (req, resp) => {
+  resp.render('signup', {
+    fullName: req.body.fullName,
+    email: req.body.email,
+    birthYear: req.body.birthYear,
+    position: req.body.position,
+    password: req.body.password,
+  })
+})
+
+
+
+
+app.listen(3000, () => {
+  console.log("At least something is showing ;)")
+})

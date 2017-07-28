@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="" method="post">
+    <form class="" action="/signup" method="post">
       <p>Your Name:</p>
       <input type="text" name="fullName">
       <p>Your Email:</p>
@@ -13,7 +13,12 @@
       <p>Year of Birth:</p>
       <input type="number" name="birthYear">
       <p>Position</p>
-      <input type="radio" name="position">
+      <select name="position">
+        <option value="technicalManager">Technical Manager</option>
+        <option value="developer">Developer</option>
+        <option value="UIdesigner">UI Designer</option>
+        <option value="graphicD">Graphic Designer</option>
+      </select>
       <p>Password</p>
       <input type="password" name="password">
       <button type="submit" name="button">Submit</button>

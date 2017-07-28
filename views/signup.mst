@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+  </head>
+  <body>
+    <p>Here is your info:</p>
+    <p>Full name - {{fullName}}</p>
+    <p>Email - {{email}}</p>
+    <p>Year of Birth - {{birthYear}}</p>
+    <p>Position - {{position}}</p>
+    <p>Password - {{password}}</p>
+  </body>
+</html>
