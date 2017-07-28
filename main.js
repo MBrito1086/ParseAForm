@@ -19,28 +19,34 @@ app.get('/', (req, resp) => {
 })
 
 app.post('/signup', (req, resp) => {
-  req.checkbody({
+  req.checkBody({
     fullName: {
-      optional: true,
+      notEmpty: true,
       isLength: {
-        options: [{ min: 1, max: 100 }],
-        errorMessage: 'Must be between 2 and 10 chars long'
+        options: [{ min: 2, max: 100 }],
+        // errorMessage: 'Must be between 2 and 10 chars long'
     },
     errorMessage: "Invalid Name"
     }
   })
 
-  req
-    .checkBody("email")
-    .notEmpty();
+  const errors = req.validationErrors()
+    if (errors){
+      // render the form again with the errors
+      const data = {
+        errors: errors
+      }
+      resp.render('home', data)
+    } else{
+      resp.render('signup', {
+        fullName: req.body.fullName,
+        email: req.body.email,
+        birthYear: req.body.birthYear,
+        position: req.body.position,
+        password: req.body.password,
+      })
+}
 
-  resp.render('signup', {
-    fullName: req.body.fullName,
-    email: req.body.email,
-    birthYear: req.body.birthYear,
-    position: req.body.position,
-    password: req.body.password,
-  })
 })
 
 

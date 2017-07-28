@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
+    {{#errors}}
+        <li>{{msg}}</li>
+    {{/errors}}
     <form class="" action="/signup" method="post">
       <p>Your Name:</p>
       <input type="text" name="fullName">
