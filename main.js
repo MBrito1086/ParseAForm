@@ -21,13 +21,24 @@ app.get('/', (req, resp) => {
 app.post('/signup', (req, resp) => {
   req.checkBody({
     fullName: {
-      notEmpty: true,
       isLength: {
         options: [{ min: 2, max: 100 }],
-        // errorMessage: 'Must be between 2 and 10 chars long'
-    },
-    errorMessage: "Invalid Name"
+        errorMessage: 'Must be between 2 and 100 characters long'
+      }
     }
+    email: {
+      isLength: {
+        options: [{ min: 6, max: 100}],
+        errorMessage: 'Must be between 6 and 100 characters long'
+      }
+    }
+    birthYear: {
+      isLength: {
+        options: [{ min: 1900, max: 2017}],
+        errorMessage: 'Must be between 1900 and 2017'
+      }
+    }
+    
   })
 
   const errors = req.validationErrors()
