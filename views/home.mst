@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="post">
+      <p>Your Name:</p>
+      <input type="text" name="fullName">
+      <p>Your Email:</p>
+      <input type="email" name="email">
+      <p>Year of Birth:</p>
+      <input type="number" name="birthYear">
+      <p>Position</p>
+      <input type="radio" name="position">
+      <p>Password</p>
+      <input type="password" name="password">
+      <button type="submit" name="button">Submit</button>
+    </form>
+  </body>
+</html>
